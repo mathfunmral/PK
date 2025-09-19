@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuis Pengetahuan Kuantitatif - UTBK 2025</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f9; }
+    h1 { text-align: center; color: #333; }
+    .soal { margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .soal h3 { margin: 0 0 10px; }
+    button { padding: 10px 20px; border: none; border-radius: 8px; background: #4CAF50; color: white; font-size: 16px; cursor: pointer; }
+    button:hover { background: #45a049; }
+    #hasil { font-size: 18px; font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<h1>Kuis Pengetahuan Kuantitatif UTBK 2025</h1>
+
+<form id="quizForm">
+
+  <!-- Soal 1 -->
+  <div class="soal">
+    <h3>1. Sebuah perusahaan memproduksi widget dan gizmo. Bila rasio widget : gizmo = 3 : 5 dan total produksi 3.200 unit, berapa banyak gizmo yang diproduksi?</h3>
+    <label><input type="radio" name="q1" value="A"> 1.200</label><br>
+    <label><input type="radio" name="q1" value="B"> 1.800</label><br>
+    <label><input type="radio" name="q1" value="C"> 2.000</label><br>
+    <label><input type="radio" name="q1" value="D"> 2.400</label><br>
+    <label><input type="radio" name="q1" value="E"> 2.600</label>
+  </div>
+
+  <!-- Soal 2 -->
+  <div class="soal">
+    <h3>2. Akar-akar persamaan kuadrat \(x^2 - px + 36 = 0\) adalah bilangan bulat positif berbeda dengan jumlah 13. Nilai p adalah …</h3>
+    <label><input type="radio" name="q2" value="A"> 5</label><br>
+    <label><input type="radio" name="q2" value="B"> 9</label><br>
+    <label><input type="radio" name="q2" value="C"> 13</label><br>
+    <label><input type="radio" name="q2" value="D"> 15</label><br>
+    <label><input type="radio" name="q2" value="E"> 17</label>
+  </div>
+
+  <!-- Soal 3 -->
+  <div class="soal">
+    <h3>3. Rata-rata 5 bilangan adalah 12. Jika ditambah 1 bilangan lagi rata-rata menjadi 13, maka bilangan yang ditambahkan adalah …</h3>
+    <label><input type="radio" name="q3" value="A"> 16</label><br>
+    <label><input type="radio" name="q3" value="B"> 18</label><br>
+    <label><input type="radio" name="q3" value="C"> 19</label><br>
+    <label><input type="radio" name="q3" value="D"> 20</label><br>
+    <label><input type="radio" name="q3" value="E"> 21</label>
+  </div>
+
+  <!-- Soal 4 -->
+  <div class="soal">
+    <h3>4. Dalam sebuah kelas, 40% siswa lulus matematika (nilai ≥ 80). Jika 25 siswa mendapat nilai ≥ 80, berapa jumlah siswa di kelas?</h3>
+    <label><input type="radio" name="q4" value="A"> 50</label><br>
+    <label><input type="radio" name="q4" value="B"> 60</label><br>
+    <label><input type="radio" name="q4" value="C"> 62</label><br>
+    <label><input type="radio" name="q4" value="D"> 65</label><br>
+    <label><input type="radio" name="q4" value="E"> 70</label>
+  </div>
+
+  <!-- Soal 5 -->
+  <div class="soal">
+    <h3>5. Bilangan empat digit a294 &lt; 6000. Jika dibagi 3 sisanya 1, nilai a adalah …</h3>
+    <label><input type="radio" name="q5" value="A"> 1</label><br>
+    <label><input type="radio" name="q5" value="B"> 2</label><br>
+    <label><input type="radio" name="q5" value="C"> 3</label><br>
+    <label><input type="radio" name="q5" value="D"> 4</label><br>
+    <label><input type="radio" name="q5" value="E"> 5</label>
+  </div>
+
+  <!-- Tambah soal 6-10 dengan format sama... -->
+
+  <button type="button" onclick="cekJawaban()">Kirim Jawaban</button>
+</form>
+
+<p id="hasil"></p>
+
+<script>
+function cekJawaban() {
+  var kunci = {
+    q1: "C", // 2000
+    q2: "C", // 13
+    q3: "B", // 18
+    q4: "C", // 62
+    q5: "D"  // 4
+    // q6-q10 bisa ditambahkan
+  };
+
+  var score = 0;
+  for (var key in kunci) {
+    var jawaban = document.querySelector('input[name="'+key+'"]:checked');
+    if (jawaban && jawaban.value === kunci[key]) {
+      score += 5; // tiap soal benar 5 poin
+    }
+  }
+  document.getElementById("hasil").innerHTML = "Skor Kamu: " + score;
+}
+</script>
+
+</body>
+</html>
